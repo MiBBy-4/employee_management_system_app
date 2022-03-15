@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\employees\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['controller' => EmployeeController::class], function()
+{
+    Route::get('employees', 'index')->name('employees.index');
+    Route::get('employees/create', 'create')->name('employees.create');
+    Route::post('employees', 'store')->name('employees.store');
+    Route::get('employees/{employee}/edit', 'edit')->name('employees.edit');
+    Route::patch('employees/{employee}', 'update')->name('employees.update');
+    Route::delete('employees/{employee}', 'destroy')->name('employee.destroy');
 });
