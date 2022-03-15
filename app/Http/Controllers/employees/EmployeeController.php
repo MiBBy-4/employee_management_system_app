@@ -22,18 +22,18 @@ class EmployeeController extends Controller
         return 'it is should be function to post a new employee';
     }
 
-    public function edit()
+    public function edit($employeeId)
     {
-        return 'form to update an employee';
+        return "form to update an $employeeId";
     }
 
-    public function update()
+    public function update($employeeId)
     {
-        return 'it is should be function to update an employee';
+        return "it is should be function to update an $employeeId";
     }
 
-    public function destroy()
+    public function destroy($employeeId)
     {
-        return 'it is should be function to delete an employee';
+        return "it is should be function to delete an $employeeId";
     }
 }
