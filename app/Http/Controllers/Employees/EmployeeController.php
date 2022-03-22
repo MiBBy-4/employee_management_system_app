@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\employees;
+namespace App\Http\Controllers\Employees;
 
 use App\Http\Controllers\Controller;
 use App\Models\Employee;
@@ -11,7 +11,8 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        dd($employees);
+
+        return view('employees.index', compact('employees'));
     }
 
     public function create()
