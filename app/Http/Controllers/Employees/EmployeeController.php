@@ -22,6 +22,7 @@ class EmployeeController extends Controller
 
     public function store()
     {
+        dd(request());
         return 'it is should be function to post a new employee';
     }
 
