@@ -22,3 +22,7 @@ Route::group(['controller' => EmployeeController::class], function()
     Route::patch('employees/{employee}', 'update')->name('employees.update');
     Route::delete('employees/{employee}', 'destroy')->name('employee.destroy');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

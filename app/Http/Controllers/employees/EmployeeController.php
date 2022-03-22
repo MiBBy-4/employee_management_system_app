@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\employees;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
     public function index()
     {
-        return 'table with employees';
+        $employees = Employee::all();
+        dd($employees);
     }
 
     public function create()
