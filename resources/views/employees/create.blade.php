@@ -3,6 +3,15 @@
 @section('content')
     <h1 class="text-center mb-3">Create an Employee</h1>
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="POST" action="{{ route('employees.store') }}">
             @csrf
             <div class="form-floating mb-3">

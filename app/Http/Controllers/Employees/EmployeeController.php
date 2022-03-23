@@ -25,6 +25,7 @@ class EmployeeController extends EmployeeBaseController
     {
         $data = $request->validated();
         $this->service->store($data);
+
         return redirect()->route('employees.index');
     }
 
