@@ -22,6 +22,11 @@
                         <td>{{ $employee->date_of_birth }}</td>
                         <td>
                             <a href="{{ route('employees.edit', $employee->id) }}" type="button" class="btn btn-outline-primary">Update</a>
+                            <form action="{{ route('employees.destroy', $employee) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

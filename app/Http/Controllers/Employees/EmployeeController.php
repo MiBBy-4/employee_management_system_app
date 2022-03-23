@@ -42,8 +42,10 @@ class EmployeeController extends EmployeeBaseController
         return redirect()->route('employees.index');
     }
 
-    public function destroy($employeeId)
+    public function destroy(Employee $employee)
     {
-        return "it is should be function to delete an $employeeId";
+        $employee->delete();
+
+        return redirect()->route('employees.index');
     }
 }

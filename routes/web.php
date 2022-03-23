@@ -20,7 +20,7 @@ Route::group(['controller' => EmployeeController::class], function()
     Route::post('employees', 'store')->name('employees.store');
     Route::get('employees/{employee}/edit', 'edit')->name('employees.edit');
     Route::patch('employees/{employee}', 'update')->name('employees.update');
-    Route::delete('employees/{employee}', 'destroy')->name('employee.destroy');
+    Route::delete('employees/{employee}', 'destroy')->name('employees.destroy');
 });
 
 Auth::routes();
