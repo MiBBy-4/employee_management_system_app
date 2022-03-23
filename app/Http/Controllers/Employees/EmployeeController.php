@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Employees;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Employee\StoreRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller
+class EmployeeController extends EmployeeBaseController
 {
     public function index()
     {
@@ -20,10 +21,11 @@ class EmployeeController extends Controller
         return view('employees.create');
     }
 
-    public function store()
+    public function store(StoreRequest $request)
     {
-        dd(request());
-        return 'it is should be function to post a new employee';
+        $data = $request->validated();
+        $this->service->store($data);
+        return redirect()->route('employees.index');
     }
 
     public function edit($employeeId)

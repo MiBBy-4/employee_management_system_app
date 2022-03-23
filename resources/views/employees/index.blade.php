@@ -18,7 +18,7 @@
                         <th scope="row">{{ $employee->first_name }}</th>
                         <td>{{ $employee->last_name }}</td>
                         <td>{{ $employee->salary }}</td>
-                        <td>{{ $employee->day_of_birth }}</td>
+                        <td>{{ $employee->date_of_birth }}</td>
                     </tr>
                 @endforeach
             </tbody>
