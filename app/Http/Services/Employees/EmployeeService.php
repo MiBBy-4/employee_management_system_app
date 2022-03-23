@@ -10,6 +10,11 @@ class EmployeeService
     {
         Employee::create($data);
     }
+
+    public function update($employee, $data)
+    {
+        $employee->update($data);
+    }
 }
 
 ?>

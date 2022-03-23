@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Employees;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Employee\StoreRequest;
+use App\Http\Requests\Employee\EmployeeRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -21,7 +21,7 @@ class EmployeeController extends EmployeeBaseController
         return view('employees.create');
     }
 
-    public function store(StoreRequest $request)
+    public function store(EmployeeRequest $request)
     {
         $data = $request->validated();
         $this->service->store($data);
@@ -29,14 +29,17 @@ class EmployeeController extends EmployeeBaseController
         return redirect()->route('employees.index');
     }
 
-    public function edit($employeeId)
+    public function edit(Employee $employee)
     {
-        return "form to update an $employeeId";
+        return view('employees.edit', compact('employee'));
     }
 
-    public function update($employeeId)
+    public function update(Employee $employee, EmployeeRequest $request)
     {
-        return "it is should be function to update an $employeeId";
+        $data = $request->validated();
+        $this->service->update($employee, $data);
+
+        return redirect()->route('employees.index');
     }
 
     public function destroy($employeeId)

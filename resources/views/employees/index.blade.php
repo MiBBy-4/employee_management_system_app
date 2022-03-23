@@ -10,6 +10,7 @@
                     <th scope="col">Last Name</th>
                     <th scope="col">Salary</th>
                     <th scope="col">Date of Birth</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,9 @@
                         <td>{{ $employee->last_name }}</td>
                         <td>{{ $employee->salary }}</td>
                         <td>{{ $employee->date_of_birth }}</td>
+                        <td>
+                            <a href="{{ route('employees.edit', $employee->id) }}" type="button" class="btn btn-outline-primary">Update</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
