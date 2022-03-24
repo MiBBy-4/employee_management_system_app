@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title')Update {{ $employee->last_name }} @endsection
+
 @section('content')
     <h1 class="text-center mb-3">Update an {{ $employee->last_name }}</h1>
     <div class="container">

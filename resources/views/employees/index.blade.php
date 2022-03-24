@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title')Employees list @endsection
 
 @section('content')
     <h1 class="text-center mt-2">Employees List</h1>
@@ -22,10 +23,12 @@
                         <td>{{ $employee->date_of_birth }}</td>
                         <td>
                             <a href="{{ route('employees.edit', $employee->id) }}" type="button" class="btn btn-outline-primary">Update</a>
-                            <form action="{{ route('employees.destroy', $employee) }}" method="POST" class="d-inline">
+                            <form action="{{ route('employees.destroy', $employee->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger">
+                                    Delete
+                                </button>
                             </form>
                         </td>
                     </tr>
