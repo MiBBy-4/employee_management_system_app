@@ -25,7 +25,7 @@
                 <label for="lastName">Last Name</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="number" class="form-control" name="salary" value="{{ old('salary') }}" id="salary" placeholder="Input employee's salary">
+                <input type="text" class="form-control" name="salary" value="{{ old('salary') }}" id="salary" placeholder="Input employee's salary">
                 <label for="salary">Salary</label>
               </div>
               <div class="form-floating mb-3">

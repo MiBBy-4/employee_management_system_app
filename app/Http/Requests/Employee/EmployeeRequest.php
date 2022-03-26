@@ -26,7 +26,7 @@ class EmployeeRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:100',
             'last_name' => 'required|string|max:100',
-            'salary' => 'required|integer',
+            'salary' => 'required|numeric',
             'date_of_birth' => 'required|date',
         ];
     }
