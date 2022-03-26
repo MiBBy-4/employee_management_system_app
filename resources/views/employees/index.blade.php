@@ -36,4 +36,7 @@
             </tbody>
         </table>
     </div>
+    <div class="container d-flex justify-content-md-center mt-4">
+        {{$employees->appends($_GET)->links()}}
+    </div>
 @endsection
