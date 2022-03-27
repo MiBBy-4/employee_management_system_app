@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 
-$DATABASE_URL = parse_url(env('DATABASE_URL '));
+$DATABASE_URL = parse_url(env('DATABASE_URL'));
 
 if(App::environment('local')) {
     return [
