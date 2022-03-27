@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['controller' => EmployeeController::class], function()
+Route::group(['controller' => EmployeeController::class, 'middleware' => ['auth']], function()
 {
     Route::get('employees', 'index')->name('employees.index');
     Route::get('employees/create', 'create')->name('employees.create');
