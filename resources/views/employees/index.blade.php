@@ -7,17 +7,17 @@
         <table class="table mt-5">
             <thead>
                 <tr>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Date of Birth</th>
-                    <th scope="col">Action</th>
+                    <th>@sortablelink('first_name', 'First Name')</th>
+                    <th>@sortablelink('last_name', 'Last Name')</th>
+                    <th>@sortablelink('salary', 'Salary')</th>
+                    <th>@sortablelink('date_of_birth', 'Date of birth')</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($employees as $employee)
                     <tr>
-                        <th scope="row">{{ $employee->first_name }}</th>
+                        <td>{{ $employee->first_name }}</td>
                         <td>{{ $employee->last_name }}</td>
                         <td>{{ $employee->salary }}</td>
                         <td>{{ $employee->date_of_birth }}</td>

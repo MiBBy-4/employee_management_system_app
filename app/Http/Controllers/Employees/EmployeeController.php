@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Employees;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Employee\EmployeeRequest;
 use App\Models\Employee;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class EmployeeController extends EmployeeBaseController
 {
     public function index()
     {
-        $employees = Employee::paginate(10);
+        $employees = Employee::sortable()->paginate(10);
 
         return view('employees.index', compact('employees'));
     }
