@@ -18,19 +18,19 @@
             @csrf
             @method('PATCH')
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="firstName" value="{{ $employee->first_name }}" name="first_name" placeholder="Input employee's first name">
+                <input type="text" class="form-control" id="firstName" value="{{ old('first_name') ? old('first_name') : $employee->first_name }}" name="first_name" placeholder="Input employee's first name">
                 <label for="firstName">First Name</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="last_name" value="{{ $employee->last_name }}" id="lastName" placeholder="Input employee's last name">
+                <input type="text" class="form-control" name="last_name" value="{{ old('last_name') ? old('last_name') : $employee->last_name }}" id="lastName" placeholder="Input employee's last name">
                 <label for="lastName">Last Name</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="salary" value="{{ $employee->salary }}" id="salary" placeholder="Input employee's salary">
+                <input type="text" class="form-control" name="salary" value="{{ old('salary') ? old('salary') : $employee->salary }}" id="salary" placeholder="Input employee's salary">
                 <label for="salary">Salary</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="date" class="form-control" name="date_of_birth" value="{{ $employee->date_of_birth }}" id="date_of_birth" placeholder="Input employee's date of birth">
+                <input type="date" class="form-control" name="date_of_birth" value="{{ old('date_of_birth') ? old('date_of_birth') : $employee->date_of_birth }}" id="date_of_birth" placeholder="Input employee's date of birth">
                 <label for="date_of_birh">Date of Birth</label>
               </div>
               <button type="submit" class="btn btn-success">Update</button>
